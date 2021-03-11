@@ -10,6 +10,6 @@ int main() {
     spdlog::info("Sample Info output.");
     spdlog::warn("Sample Warn output.");
     spdlog::error("Sample Error output.");
-
+    
     return 0;
 }
