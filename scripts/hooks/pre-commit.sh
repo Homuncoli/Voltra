@@ -53,12 +53,18 @@ STASH_NAME="pre-commit-$(date +%s)"
 git stash save -q --keep-index $STASH_NAME
 
 # Compile the project and run googletests
-(
-	cd build/
-	cmake ..
-	make all
-	./test/DevOps_test
-)
+
+cmake -B build/
+make -C build/
+build/test/DevOps_test
+
+TEST_RESULT=$?
+if [ $TEST_RESULT -ne 0 ]; then
+	echo "Tests Failed"
+	exit $TEST_RESULT
+else
+	echo "Tests Succeeded"
+fi
 
 # Reapply stash
 STASHES=$(git stash list)
