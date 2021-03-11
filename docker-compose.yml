@@ -3,7 +3,10 @@ version: "3"
 services: 
   jenkins:
     image: jenkins/jenkins
-    command: bash -c "apt-get -y update && apt-get -y install cmake make gcc g++ && /sbin/tini -- /usr/local/bin/jenkins.sh"
+    command: >
+      bash -c "apt-get -y update && 
+      apt-get -y install cmake make gcc g++ && 
+      /sbin/tini -- /usr/local/bin/jenkins.sh"
     privileged: true
     user: root
     ports:
