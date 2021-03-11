@@ -49,8 +49,7 @@ fi
 # exec git diff-index --check --cached $against --
 
 # Stash unchanged changes before running tests
-STASH_NAME="pre-commit-$(date +%s)"
-git stash save -q --keep-index $STASH_NAME
+git stash --keep-index -u
 
 # Compile the project and run googletests
 
@@ -67,7 +66,4 @@ else
 fi
 
 # Reapply stash
-STASHES=$(git stash list)
-if [[ $STASHES == "$STASH_NAME" ]]; then
-  git stash pop -q
-fi
+git stash pop
