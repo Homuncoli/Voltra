@@ -55,7 +55,7 @@ git stash --keep-index -u
 
 cmake -B build/
 make -C build/
-build/test/DevOps_test
+build/test/Voltra_test
 
 TEST_RESULT=$?
 if [ $TEST_RESULT -ne 0 ]; then
