@@ -1,3 +1,7 @@
-set(SOURCES main.cpp)
+set(BINARY ${CMAKE_PROJECT_NAME})
 
-add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
+set(SOURCES main.cpp Forumla.cpp)
+
+add_executable(${BINARY} ${SOURCES})
+
+add_library(${BINARY}_lib STATIC ${SOURCES})

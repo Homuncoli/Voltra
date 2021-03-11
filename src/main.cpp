@@ -1,6 +1,8 @@
 #include <iostream>
 
+#include "Forumla.h"
+
 int main() {
-    std::cout << "Hello World!" << '\n';
+    std::cout << Formula::square(10) << '\n';
     return 0;
 }
