@@ -12,6 +12,8 @@ make -C build/
 ./build/src/Voltra
 ```
 
+A Environment.h header is created at build/config/Environment.h containing the info from CMake in config/Environment.h.in
+
 ## Googletest
 
 Testing is done via google test
