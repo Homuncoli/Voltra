@@ -27,3 +27,7 @@ make -C build/
 ## spdlog
 
 Logging is done via spdlog
+
+## Jenkins
+
+As a build server a Jenkins config + Dockercompose is included
