@@ -1,6 +1,6 @@
 set(BINARY ${CMAKE_PROJECT_NAME}_test)
 
-set(TEST_SOURCES main_test.cpp Formula_test.cpp)
+set(TEST_SOURCES main_test.cpp Formula_test.cpp Environment_test.cpp)
 
 add_executable(${BINARY} ${TEST_SOURCES})
 
