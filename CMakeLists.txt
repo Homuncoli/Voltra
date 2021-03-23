@@ -4,6 +4,10 @@ project(Voltra
         DESCRIPTION "An template with various DevOps"
         LANGUAGES CXX)
 
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE "Debug") # Default to 'Debug'
+endif()
+
 if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
   option(BUILD_TESTS "Add gtest to build" ON)
 endif ()
