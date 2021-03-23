@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "Environment.h"
+#include "Voltra.h"
 
 TEST(Environment, cmake_project_name) {
     #ifdef CMAKE_PROJECT_NAME

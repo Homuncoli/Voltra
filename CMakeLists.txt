@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
-project(Voltra 
+
+project(Voltra
         VERSION 1.0.0
         DESCRIPTION "An template with various DevOps"
         LANGUAGES CXX)
@@ -20,7 +21,7 @@ if (${CMAKE_BUILD_TYPE} STREQUAL "Release")
   option(BUILD_TESTS "Add gtest to build" OFF)
 endif ()
 
-add_subdirectory(conf)
+add_subdirectory(include)
 
 add_subdirectory(src)
 

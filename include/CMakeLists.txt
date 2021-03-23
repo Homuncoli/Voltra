@@ -1,0 +1,1 @@
+configure_file(${PROJECT_NAME}.h.in ${PROJECT_NAME}.h @ONLY)
