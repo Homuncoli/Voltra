@@ -14,3 +14,6 @@ add_subdirectory(lib/spdlog)
 
 add_subdirectory(test)
 add_subdirectory(lib/googletest)
+
+install(TARGETS ${PROJECT_NAME} DESTINATION lib)
+install(FILES include/Forumla.h DESTINATION include)
