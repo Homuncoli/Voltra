@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
-project(Voltra 
+
+project(Voltra
         VERSION 1.0.0
         DESCRIPTION "An template with various DevOps"
         LANGUAGES CXX)
@@ -8,6 +9,11 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Debug") # Default to 'Debug'
 endif()
 
+set(LIBRARY_NAME ${PROJECT_NAME})
+set(EXECUTABLE_NAME ${PROJECT_NAME}_run)
+set(TEST_NAME ${PROJECT_NAME}_test)
+option(BUILD_EXECUTABLE "Build an executable in addition to the static lib" ON)
+
 if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
   option(BUILD_TESTS "Add gtest to build" ON)
 endif ()
@@ -15,11 +21,9 @@ if (${CMAKE_BUILD_TYPE} STREQUAL "Release")
   option(BUILD_TESTS "Add gtest to build" OFF)
 endif ()
 
-add_subdirectory(conf)
+add_subdirectory(include)
 
 add_subdirectory(src)
-target_include_directories(${PROJECT_NAME} PUBLIC include)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/conf)
 
 add_subdirectory(lib/spdlog)
 

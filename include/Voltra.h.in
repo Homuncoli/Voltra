@@ -1,6 +1,8 @@
 #ifndef ENVIRONMENT_H
 #define ENVIRONMENT_H
 
+#include "Formula.h"
+
 #cmakedefine CMAKE_PROJECT_VERSION "@CMAKE_PROJECT_VERSION@"
 #cmakedefine CMAKE_PROJECT_NAME "@CMAKE_PROJECT_NAME@"
 #cmakedefine PROJECT_VERSION "@PROJECT_VERSION@"
