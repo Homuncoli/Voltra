@@ -3,6 +3,10 @@
 A project to test various DevOps tools
 
 ## CMake
+After running pulling all submodules via 
+```bash
+git submodule update --init --recursive
+```
 
 This project should be build via cmake:
 
