@@ -1,8 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
-project(Voltra)
+project(Voltra 
+        VERSION 1.0.0
+        DESCRIPTION "An template with various DevOps"
+        LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_PROJECT_VERSION 1.0.0)
+if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+  option(BUILD_TESTS "Add gtest to build" ON)
+endif ()
+if (${CMAKE_BUILD_TYPE} STREQUAL "Release")
+  option(BUILD_TESTS "Add gtest to build" OFF)
+endif ()
 
 add_subdirectory(conf)
 
@@ -12,8 +19,10 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/co
 
 add_subdirectory(lib/spdlog)
 
-add_subdirectory(test)
-add_subdirectory(lib/googletest)
+if (${BUILD_TESTS})
+   add_subdirectory(test)
+   add_subdirectory(lib/googletest)
+endif()
 
 # `make install` support
 file(GLOB HEADERS "include/*.h")
