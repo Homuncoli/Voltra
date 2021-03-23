@@ -2,17 +2,11 @@
 
 #include <spdlog/spdlog.h>
 
-#include "Forumla.h"
-
 #include "Environment.h"
 
 int main() {
-    std::cout << Formula::square(10) << '\n';
-    std::cout << CMAKE_PROJECT_VERSION << '\n';
-
-    spdlog::info("Sample Info output.");
-    spdlog::warn("Sample Warn output.");
-    spdlog::error("Sample Error output.");
+    spdlog::info("{0}: {1}", CMAKE_PROJECT_NAME, CMAKE_PROJECT_VERSION);
+    spdlog::info("{0}: {1}", PROJECT_NAME, PROJECT_VERSION);
 
     return 0;
 }
