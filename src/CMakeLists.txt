@@ -1,6 +1,9 @@
 set(BINARY ${PROJECT_NAME})
 
-set(SOURCES main.cpp Forumla.cpp)
+file(GLOB SOURCES
+     "*.h"
+     "*.cpp"
+)
 
 add_library(${BINARY} STATIC ${SOURCES})
 target_link_libraries(${BINARY} spdlog)

@@ -15,5 +15,9 @@ add_subdirectory(lib/spdlog)
 add_subdirectory(test)
 add_subdirectory(lib/googletest)
 
-install(TARGETS ${PROJECT_NAME} DESTINATION lib)
-install(FILES include/Forumla.h DESTINATION include)
+# `make install` support
+file(GLOB HEADERS "include/*.h")
+set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER ${HEADERS})
+INSTALL(TARGETS ${PROJECT_NAME} 
+        LIBRARY DESTINATION lib
+        PUBLIC_HEADER DESTINATION include)
