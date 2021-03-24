@@ -13,6 +13,7 @@ set(LIBRARY_NAME ${PROJECT_NAME})
 set(EXECUTABLE_NAME ${PROJECT_NAME}_run)
 set(TEST_NAME ${PROJECT_NAME}_test)
 option(BUILD_EXECUTABLE "Build an executable in addition to the static lib" ON)
+option(ADD_LOG "Add spdlog as a logging library" ON)
 
 if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
   option(BUILD_TESTS "Add gtest to build" ON)
@@ -25,7 +26,9 @@ add_subdirectory(include)
 
 add_subdirectory(src)
 
-add_subdirectory(lib/spdlog)
+if (${ADD_LOG})
+   add_subdirectory(lib/spdlog)
+endif()
 
 if (${BUILD_TESTS})
    add_subdirectory(test)
