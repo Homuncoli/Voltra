@@ -1,6 +1,9 @@
 # Voltra
 
-A project to test various DevOps tools
+A CMake project template for building an library or executable  with:
+
+* Logging [SPDLOG]
+* Test [gTest]
 
 ## CMake
 After running pulling all submodules via 
@@ -16,7 +19,7 @@ make -C build/
 ./build/src/Voltra
 ```
 
-A Environment.h header is created at build/config/Environment.h containing the info from CMake in config/Environment.h.in
+A Voltra.h header is created at build/include/Voltra.h containing the info from CMake in include/Voltra.h.in
 
 ## Googletest
 
